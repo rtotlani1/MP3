@@ -1,13 +1,25 @@
 :root {
   --color-bg: #F6EFE4;
   --color-text: #2E2118;
-  --color-text-muted: #8A7663;
+  --color-text-muted: #6E5A46;
   --color-accent: #7B4B32;
   --color-accent-soft: #EADFCB;
   --color-border: #E1D2BC;
   --color-card-bg: #FFFBF5;
   --font-display: 'Fraunces', serif;
   --font-body: 'DM Sans', sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 * {
@@ -144,6 +156,38 @@ h2 {
   margin-bottom: 20px;
 }
 
+.cuisine-section {
+  margin-bottom: 40px;
+}
+
+.cuisine-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cuisine-chip {
+  border: 1px solid var(--color-accent);
+  background: transparent;
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.cuisine-chip:hover {
+  background: var(--color-accent);
+  color: var(--color-card-bg);
+}
+
+.cuisine-chip-any {
+  background: var(--color-accent-soft);
+  border-color: transparent;
+}
+
 .results-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -190,6 +234,8 @@ h2 {
 
 .detail-image {
   width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 20px;
 }
@@ -245,6 +291,28 @@ h2 {
   line-height: 1.7;
   color: var(--color-text);
   white-space: pre-line;
+}
+
+footer {
+  margin: 64px -24px -96px;
+  padding: 28px 24px;
+  background-color: var(--color-text);
+  text-align: center;
+}
+
+footer p {
+  color: var(--color-bg);
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: var(--color-accent-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--color-accent-soft);
+}
+
+footer a:hover {
+  border-bottom-style: solid;
 }
 
 @media (max-width: 480px) {

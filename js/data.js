@@ -21,3 +21,21 @@ async function fetchMealDetails(id) {
   const data = await response.json();
   return data.meals ? data.meals[0] : null;
 }
+
+// Full list of cuisines/areas TheMealDB knows about, used to populate the cuisine dropdown.
+async function fetchCuisineList() {
+  const url = `${BASE_URL}/list.php?a=list`;
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`list.php (area) failed: ${response.status}`);
+  const data = await response.json();
+  return data.meals; // array of { strArea }
+}
+
+// Filter meals by cuisine/area (e.g. "Indian", "Italian").
+async function fetchMealsByArea(area) {
+  const url = `${BASE_URL}/filter.php?a=${encodeURIComponent(area)}`;
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`filter.php (area) failed: ${response.status}`);
+  const data = await response.json();
+  return data.meals;
+}

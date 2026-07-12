@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yesshelf finds recipes you can actually make from the ingredients already in your kitchen, using TheMealDB.">
   <title>Yesshelf</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +22,7 @@
     <section class="pantry-section">
       <h2>Your ingredients</h2>
       <form id="pantry-form">
+        <label for="ingredient-input" class="sr-only">Add an ingredient</label>
         <input type="text" id="ingredient-input" placeholder="chicken, garlic, rice..." autocomplete="off">
         <button type="submit">Add</button>
       </form>
@@ -29,9 +31,16 @@
 
     <div class="divider" aria-hidden="true"></div>
 
-    <section class="results-section" id="results-section">
+    <section class="cuisine-section" id="cuisine-section">
+      <h2>Recommended cuisines</h2>
+      <p id="cuisine-status" class="status" aria-live="polite"></p>
+      <div id="cuisine-options" class="cuisine-options"></div>
+    </section>
+
+    <section class="results-section" id="results-section" hidden>
+      <button id="results-back" class="detail-close" type="button">&larr; Change cuisine</button>
       <h2>Recipes you can make</h2>
-      <p id="status" class="status"></p>
+      <p id="status" class="status" aria-live="polite"></p>
       <div id="results" class="results-grid"></div>
     </section>
 
@@ -40,6 +49,10 @@
       <div id="detail-content"></div>
     </section>
   </main>
+
+  <footer>
+    <p>Recipe data from <a href="https://www.themealdb.com/" target="_blank" rel="noopener">TheMealDB</a>.</p>
+  </footer>
 
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
