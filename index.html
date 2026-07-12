@@ -4,20 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yesshelf</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
   <header>
+    <p class="eyebrow">Pantry to plate</p>
     <h1>Yesshelf</h1>
-    <p>What can I cook with what's on the shelf?</p>
+    <p class="tagline">Tell it what's on the shelf. It finds what to cook.</p>
   </header>
 
   <main>
-    <!-- Iteration 1: hard-coded to "chicken" for now.
-         Iteration 2 will replace this with a real ingredient picker. -->
-    <h2 id="results-heading">Meals with chicken</h2>
-    <div id="results"></div>
+    <section class="pantry-section">
+      <h2>Your ingredients</h2>
+      <form id="pantry-form">
+        <input type="text" id="ingredient-input" placeholder="chicken, garlic, rice..." autocomplete="off">
+        <button type="submit">Add</button>
+      </form>
+      <ul id="pantry-list" class="pantry-list"></ul>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <section class="results-section" id="results-section">
+      <h2>Recipes you can make</h2>
+      <p id="status" class="status"></p>
+      <div id="results" class="results-grid"></div>
+    </section>
+
+    <section class="detail-section" id="detail-section" hidden>
+      <button id="detail-close" class="detail-close" type="button">&larr; Back to results</button>
+      <div id="detail-content"></div>
+    </section>
   </main>
 
   <script src="js/data.js"></script>
