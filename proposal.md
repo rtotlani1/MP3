@@ -16,4 +16,4 @@ Core features:
 - Recipe detail view showing the full ingredient list with what you have vs. what you still need to buy, highlighted differently
 
 What I don't know yet: 
-How to efficiently intersect multiple arrays of meal IDs from separate API calls without it getting messy. Also unsure how to parse out the "missing ingredients" comparison cleanly, since lookup.php returns ingredients as 20 separate numbered fields (strIngredient1, strIngredient2, etc.) instead of a clean array — I'll probably need a helper function to loop through and collect the non-empty ones.
+How to efficiently intersect multiple arrays of meal IDs from separate API calls without it getting messy. Also unsure how to parse out the "missing ingredients" comparison cleanly, since lookup.php returns ingredients as 20 separate numbered fields (strIngredient1, strIngredient2, etc.)
